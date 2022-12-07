@@ -1,0 +1,51 @@
+
+<!-- Es nuestra tarjeta-->
+<div 
+    class="experiencia"
+    [ngClass]="{ reminder: experiencia.reminder }"
+    (click)="onToggle(experiencia)"
+>
+    <div class= "row"> 
+        <div class="col-md-2">           
+            <img  class="images" src={{experiencia.image_logo}} width="120">
+       </div>
+        
+        <div class="col-md-9">
+            <h5>
+                {{experiencia.id}} <br>
+                {{experiencia.tipo}} <br>
+                {{experiencia.tiempo}} <br>
+                {{experiencia.fecha_experiencia}} <br>
+                {{experiencia.Lugar}} <br><br>
+            </h5>
+            <h6>
+                {{experiencia.fecha_ultima_actualizacion}} 
+            </h6>
+            
+        </div>
+        <div class="col-md-1">
+            <h5>
+                <div class= "row"> 
+                    <div class="col-md-5">
+                        <fa-icon 
+                        [icon]="faPencil"
+                        [ngStyle] = "{'color': 'green'}" 
+                        (click)="onDelete(experiencia)" 
+                        ></fa-icon>
+                    </div>
+
+                    <div class="col-md-7">
+                        <fa-icon 
+                        [icon]="faTrashCan"
+                        [ngStyle] = "{'color': 'green'}" 
+                        (click)="onDelete(experiencia)" 
+                        ></fa-icon>
+                    </div>
+                </div>
+            </h5> 
+        </div>
+
+    </div>
+
+
+</div>

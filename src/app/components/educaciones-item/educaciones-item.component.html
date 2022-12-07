@@ -1,0 +1,52 @@
+
+<!-- Es nuestra tarjeta-->
+<div 
+    class="educacion"
+    [ngClass]="{ reminder: educacion.reminder }"
+    (click)="onToggle(educacion)"
+>
+    <div class= "row"> 
+        <div class="col-md-2">           
+            <img  class="images" src={{educacion.image_institucion}} width="120">
+       </div>
+        
+        <div class="col-md-9">
+            <h5>
+                {{educacion.id}} <br>
+                {{educacion.institucion}} <br>
+                {{educacion.titulo}} <br>
+                {{educacion.id_domicilio}} <br>
+                {{educacion.fecha_carrera}} <br><br>
+            </h5>
+            <h6>
+                
+            </h6>
+
+        </div>
+        <div class="col-md-1">
+            <h5>
+                <div class= "row"> 
+                    <div class="col-md-5">
+                        <fa-icon 
+                        [icon]="faPencil"
+                        [ngStyle] = "{'color': 'green'}" 
+                        (click)="onDelete(educacion)" 
+                        ></fa-icon>
+                    </div>
+
+                    <div class="col-md-7">
+                        <fa-icon 
+                        [icon]="faTrashCan"
+                        [ngStyle] = "{'color': 'green'}" 
+                        (click)="onDelete(educacion)" 
+                        ></fa-icon>
+                    </div>
+                </div>
+            </h5> 
+        </div>
+
+    </div>
+
+
+</div>
+

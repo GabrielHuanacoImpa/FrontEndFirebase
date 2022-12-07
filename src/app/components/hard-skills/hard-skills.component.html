@@ -1,0 +1,41 @@
+
+<section class="row row mt-100 border border-dark rounded align-items-center" style="height: auto">
+    <article>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-10"><h3>Hard Skills</h3></div>
+                <div class="col-md-2">  
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">                            
+                        <button class="btn btn-default" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExampleHK" aria-expanded="false" aria-controls="collapseExample">
+                            <img src="assets/icons8-plus-minus.png" width="30" /> 
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="collapse" id="collapseExampleHK">
+                <div class="card card-body">
+  
+                <!--recibimos un evento-->
+                <!--
+                <app-add-hardSkill
+                    (onAddHardSkill)="addHardSkill($event)" 
+                ></app-add-hardSkill>
+                -->
+                <h4>  </h4>
+                <app-hard-skills-item 
+                *ngFor="let hardSkill of hardSkills"
+                [hardSkill] = "hardSkill"
+                (onDeleteHardSkill)="deleteHardSkill(hardSkill)"
+                (onToggleReminder)="toggleReminder(hardSkill)"
+                >    
+                </app-hard-skills-item> 
+            
+                 
+
+                
+                </div> <!--fin card card-body-->
+            </div> <!--fin collapse  -->
+        </div> <!-- fin container-->
+    </article>
+</section>
