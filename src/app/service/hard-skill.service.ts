@@ -21,7 +21,8 @@ const httpOptions = {
 })
 export class HardSkillService {
 
-  private apiUrl = 'http://localhost:5004/hard-Skills';
+  //private apiUrl = 'http://localhost:5004/hard-Skills';
+  private apiUrl = 'http://localhost:8080/hardskills/traer';
   constructor(
     /*inicializamos el metodo*/
     private http: HttpClient

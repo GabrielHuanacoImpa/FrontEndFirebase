@@ -4,4 +4,5 @@ export interface HardSkill {
     habilidad: string;
     nivel: number;
     reminder: boolean;
+    persona_id: number;
 }
