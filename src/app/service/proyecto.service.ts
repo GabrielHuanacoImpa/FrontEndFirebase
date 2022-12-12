@@ -22,7 +22,8 @@ const httpOptions = {
 })
 export class ProyectoService {
 
-  private apiUrl = 'http://localhost:5007/proyectos';
+  //private apiUrl = 'http://localhost:5007/proyectos';
+  private apiUrl = 'http://localhost:8080/proyecto/traer';
   constructor(
     /*inicializamos el metodo*/
     private http: HttpClient
