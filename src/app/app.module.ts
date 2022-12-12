@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import{ HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { Router, RouterModule, Routes } from '@angular/router';// demas
 
@@ -30,7 +30,11 @@ import { SoftSkillsComponent } from './components/soft-skills/soft-skills.compon
 import { SoftSkillsItemComponent } from './components/soft-skills-item/soft-skills-item.component';
 import { IdiomasComponent } from './components/idiomas/idiomas.component';
 import { IdiomasItemComponent } from './components/idiomas-item/idiomas-item.component';
+import { ModalLoginComponent } from './components/modal-login/modal-login.component';
+import { IniciarSesionComponent } from './components/iniciar-sesion/iniciar-sesion.component';
+import { PersonaComponent } from './components/persona/persona.component';
 
+//import {HttpClientModule} from '@angular/common/http';
 
 
 const appRoutes: Routes = [
@@ -59,7 +63,10 @@ const appRoutes: Routes = [
     SoftSkillsComponent,
     SoftSkillsItemComponent,
     IdiomasComponent,
-    IdiomasItemComponent
+    IdiomasItemComponent,
+    ModalLoginComponent,
+    IniciarSesionComponent,
+    PersonaComponent,
   ],
   imports: [
     BrowserModule,
@@ -68,6 +75,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot(appRoutes, {enableTracing: true}),
+    ReactiveFormsModule,
     /*
     los routers sson archivos aparte
      cuando son aplicaciones grandes,
@@ -99,6 +107,7 @@ const appRoutes: Routes = [
       "clockwise": true,
       "startFromZero": false,
       "lazy": true}),
+      //HttpClientModule,
 
   ],
   /* debemos permitir el modulo HttpClientModule 
