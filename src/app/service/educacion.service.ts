@@ -21,7 +21,8 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class EducacionService {
-  private apiUrl = 'http://localhost:5003/educaciones';
+  //private apiUrl = 'http://localhost:5003/educaciones';
+  private apiUrl = 'http://localhost:8080/educacion/traer';
   constructor(
     /*inicializamos el metodo*/
     private http: HttpClient
