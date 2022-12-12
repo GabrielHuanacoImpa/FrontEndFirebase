@@ -4,4 +4,5 @@ export interface Idioma {
     habilidad: string;
     nivel: number;
     reminder: boolean;
+    persona_id: number;
 }

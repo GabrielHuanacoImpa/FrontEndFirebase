@@ -23,7 +23,8 @@ const httpOptions = {
 })
 export class IdiomaService {
 
-  private apiUrl = 'http://localhost:5006/idiomas';
+  //private apiUrl = 'http://localhost:5006/idiomas';
+  private apiUrl = 'http://localhost:8080/idioma/traer';
   constructor(
     /*inicializamos el metodo*/
     private http: HttpClient

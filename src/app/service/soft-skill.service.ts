@@ -22,7 +22,8 @@ const httpOptions = {
 })
 export class SoftSkillService {
 
-  private apiUrl = 'http://localhost:5005/soft-Skills';
+  //private apiUrl = 'http://localhost:5005/soft-Skills';
+  private apiUrl = 'http://localhost:8080/softskills/traer';
   constructor(
     /*inicializamos el metodo*/
     private http: HttpClient
