@@ -20,7 +20,8 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ExperienciaService {
-  private apiUrl = 'http://localhost:5002/experiencias';
+  //private apiUrl = 'http://localhost:5002/experiencias';
+  private apiUrl = 'http://localhost:8080/experiencia/traer';
   constructor(
     /*inicializamos el metodo*/
     private http: HttpClient
