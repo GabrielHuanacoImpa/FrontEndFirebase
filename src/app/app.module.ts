@@ -32,9 +32,13 @@ import { IdiomasComponent } from './components/idiomas/idiomas.component';
 import { IdiomasItemComponent } from './components/idiomas-item/idiomas-item.component';
 import { ModalLoginComponent } from './components/modal-login/modal-login.component';
 import { IniciarSesionComponent } from './components/iniciar-sesion/iniciar-sesion.component';
-
+import { ButtonAddEduComponent } from './components/button-add-edu/button-add-edu.component';
+//import { AddEduComponent } from './add-edu/add-edu.component';
+import { AddEduComponent } from './components/add-edu/add-edu.component';
 
 //import {HttpClientModule} from '@angular/common/http';
+
+
 
 
 const appRoutes: Routes = [
@@ -66,6 +70,8 @@ const appRoutes: Routes = [
     IdiomasItemComponent,
     ModalLoginComponent,
     IniciarSesionComponent,
+    ButtonAddEduComponent,
+    AddEduComponent,
     
   ],
   imports: [

@@ -3,6 +3,15 @@ import { Component, OnInit } from '@angular/core';
 import { EducacionService } from '../../service/educacion.service';
 
 import {Educacion} from '../../Educacion' //interface
+  // Boton Alta
+      //poder escuchar cuando hacemos click al boton, para pasarselo al otro componenete
+      import { UieduService } from 'src/app/service/uiedu.service';
+      import { Subscription } from 'rxjs';
+      // importamos para saber en que ruta estamos
+      import { Router } from '@angular/router';
+
+
+  // Fin Boton Alta
 
 
 @Component({
@@ -11,13 +20,34 @@ import {Educacion} from '../../Educacion' //interface
   styleUrls: ['./educaciones.component.css']
 })
 export class EducacionesComponent implements OnInit {
+  // Boton Alta
+      showAddTask:boolean = false; // se ve boton close
+      subscription?: Subscription;
+
+  // Fin Boton Alta
+
 
   educaciones: Educacion[] = [];
   
   constructor(  
+    // Boton Alta
+    private uieduService:UieduService,
+    private router:Router,
+    // Fin Boton Alta
+
     /* inicializamos nuestro servicio */
     private educacionService: EducacionService
-    ){}
+    ){
+
+        // Boton Alta
+            this.subscription = this.uieduService.onToggle()
+            .subscribe(value => this.showAddTask = value);
+        //cuando presiono boton cambia el valor y color de add a close
+  
+
+        // Fin Boton Alta
+
+    }
 
   ngOnInit(): void {
     /* cuando se monte el componente, 
@@ -75,4 +105,19 @@ export class EducacionesComponent implements OnInit {
     //agrego la nueva tarea y se inserta en la base de datos
 
   }
+  // Boton Alta
+      toggleAddEdu(){
+        //console.log("toggleAddTask!");
+        // cambia el valor del toogle del show
+        this.uieduService.toggleAddEducacion();
+      }
+
+      hasRoute(route: string){
+        return this.router.url === route
+        // devuelve verdadero si el url es igual al router
+        // de este componente
+      }
+
+
+  // Fin Boton Alta
 }

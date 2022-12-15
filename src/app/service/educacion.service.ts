@@ -23,6 +23,7 @@ const httpOptions = {
 export class EducacionService {
   //private apiUrl = 'http://localhost:5003/educaciones';
   private apiUrl = 'http://localhost:8080/educacion/traer';
+  private apiUrlCrear = 'http://localhost:8080/educacion/crear';
   constructor(
     /*inicializamos el metodo*/
     private http: HttpClient
@@ -45,7 +46,12 @@ export class EducacionService {
     /*es para informarle al Backend que le estamos enviando un json en root*/
   }
 
+
   addEducacion(educacion: Educacion): Observable<Educacion> {
-    return this.http.post<Educacion>(this.apiUrl, educacion, httpOptions);
+    return this.http.post<Educacion>(this.apiUrlCrear, educacion, httpOptions);
+    
   }
+
+
+
 }
