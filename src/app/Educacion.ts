@@ -16,7 +16,7 @@ export interface Educacion {
     fecha_fin: Date;
     image_institucion: string;
     ultima_actualizacion: Date;
-    reminder: boolean;
+    reminder: number;
     persona_id: number;
 
 }

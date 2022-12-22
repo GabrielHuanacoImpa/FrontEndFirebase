@@ -1,6 +1,10 @@
 <p><b>Ingrese los siguiettes datos para dar de ALTA una nueva EXPERIENCIA EDUCATIVA</b></p>
 
-<form class="add-form" (ngSubmit)="onSubmit()">
+<form #myForm="ngForm" 
+    class="add-form" 
+    (ngSubmit)="onSubmit()"
+    *ngIf="showAddEdu"
+    >
 
     <div class="form-control">
         <label for="institucion"> <b>Institucion : </b></label>
@@ -78,6 +82,7 @@
             />
     </div>
 
+    <!-- da ERROR porque devuelve false cuando deberia vdevolver 1 o cero
     <div class="form-control form-control-check">
         <label for="reminder"> <b>Reminder : </b></label>
         <input 
@@ -87,6 +92,7 @@
             [(ngModel)]="reminder"
             />
     </div>
+    -->
 
     <input type="submit" Value="Save Educacion" class="btn btn-success ">
 </form>

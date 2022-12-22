@@ -21,7 +21,7 @@ import {Educacion} from '../../Educacion' //interface
 })
 export class EducacionesComponent implements OnInit {
   // Boton Alta
-      showAddTask:boolean = false; // se ve boton close
+      showAddEdu:boolean = false; // se ve boton close
       subscription?: Subscription;
 
   // Fin Boton Alta
@@ -41,7 +41,7 @@ export class EducacionesComponent implements OnInit {
 
         // Boton Alta
             this.subscription = this.uieduService.onToggle()
-            .subscribe(value => this.showAddTask = value);
+            .subscribe(value => this.showAddEdu = value);
         //cuando presiono boton cambia el valor y color de add a close
   
 
@@ -78,9 +78,16 @@ export class EducacionesComponent implements OnInit {
   }
 
   toggleReminder(educacion: Educacion){
-    educacion.reminder = !educacion.reminder;
-    /*console.log(educacion.reminder)*/
+    //educacion.reminder = !educacion.reminder;
+    if(educacion.reminder >= 1){
+      educacion.reminder=0;
+    }else if(educacion.reminder === 0){
+      educacion.reminder=1;
+    };
+        /*console.log(educacion.reminder)*/
     this.educacionService.updateEducacionReminder(educacion).subscribe();
+    //this.educacionService.updateEducacionReminder(educacion).subscribe((educacion)=>(
+     // this.educaciones.(educacion)))
     /*la logica lo manejamos en comppnenete y 
     se lo pasamos al servicio para que aga la terea*/
     /*el servicio habla con la base de datos
@@ -99,9 +106,15 @@ export class EducacionesComponent implements OnInit {
       esta insertada en la base de datos
     */
 
-    this.educacionService.addEducacion(educacion).subscribe((educacion)=>(
+    
+      this.educacionService.addEducacion(educacion).subscribe((educacion)=>(
         this.educaciones.push(educacion)
     ))
+    
+   
+    //this.educacionService.addEducacion(educacion);
+    //this.educacionService.addEducacion(educacion);
+   
     //agrego la nueva tarea y se inserta en la base de datos
 
   }

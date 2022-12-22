@@ -42,7 +42,7 @@ import { AddEduComponent } from './components/add-edu/add-edu.component';
 
 
 const appRoutes: Routes = [
-  {path: '', component: ExperienciasComponent},
+  {path: '', component: AppComponent},
   //{path: 'about', component: AboutComponent}
 ]
 

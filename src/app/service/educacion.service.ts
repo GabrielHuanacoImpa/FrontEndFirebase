@@ -7,13 +7,18 @@ getEducacions(), por que asi es en la vida real*/
 import {Observable, of} from 'rxjs'; /* asincronico, la base de datos lleva su tiempo en responder a la peticion*/
 import {Educacion} from '../Educacion' //interface
 import {EDUCACIONES} from '../mock-educaciones'; //lista de tareas
+import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
 
 /*El servicio ya maneja todas las tareas ya no el componente*/
 /* El componente solo llama a los servicios */
 const httpOptions = {
+  
   headers: new HttpHeaders({
     'Content-Type': 'application/json'
-  })
+  }),
+  
+  //
+  //body: { 'Content-Type': 'application/json' }
 } /*mandamos un json al servidor*/
 
 
@@ -22,8 +27,11 @@ const httpOptions = {
 })
 export class EducacionService {
   //private apiUrl = 'http://localhost:5003/educaciones';
-  private apiUrl = 'http://localhost:8080/educacion/traer';
+  private apiUrl = 'http://localhost:8080/educacion/';
   private apiUrlCrear = 'http://localhost:8080/educacion/crear';
+  private apiUrl1 = 'http://localhost:8080/educacion/crear';
+  private apiUrlDel = 'http://localhost:8080/educacion/borrar';
+  private apiUrlUpdateR = 'http://localhost:8080/educacion/editar';
   constructor(
     /*inicializamos el metodo*/
     private http: HttpClient
@@ -31,25 +39,31 @@ export class EducacionService {
 
   /* devuelve la lista de tarea */
   getEducaciones(): Observable<Educacion[]> {
-    return this.http.get<Educacion[]>(this.apiUrl)
+    return this.http.get<Educacion[]>(this.apiUrl + 'traer')
+    
   }
   deleteEducacion(educacion: Educacion): Observable<Educacion> {
     /*const url = '${this.apiUrl}/${educacion.id}';*/
-    const url = `${this.apiUrl}/${educacion.id}`;
-    return this.http.delete<Educacion>(url)
+    const url2 = `${this.apiUrlDel}/${educacion.id}`;
+    console.log(url2);
+    return this.http.delete<Educacion>(url2)
   }
 
   updateEducacionReminder(educacion: Educacion): Observable<Educacion> {
-    const url = `${this.apiUrl}/${educacion.id}`;
-    return this.http.put<Educacion>(url, educacion, httpOptions)
+    const url = `${this.apiUrlUpdateR}/${educacion.id}`;
+    //return this.http.put<Educacion>(url, educacion, httpOptions)
+    return this.http.put<Educacion>(url, educacion)
     /*lo maneja como json : indicado por httpOptions*/
     /*es para informarle al Backend que le estamos enviando un json en root*/
   }
 
-
+  //private institucion : string="";
   addEducacion(educacion: Educacion): Observable<Educacion> {
-    return this.http.post<Educacion>(this.apiUrlCrear, educacion, httpOptions);
-    
+        
+    console.log(JSON.stringify(educacion))
+
+    return this.http.post<Educacion>('http://localhost:8080/educacion/crear', educacion, httpOptions);
+
   }
 
 
