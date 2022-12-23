@@ -133,4 +133,18 @@ export class EducacionesComponent implements OnInit {
 
 
   // Fin Boton Alta
+  //Boton editar
+  editEducacion(educacion: Educacion){
+    //educacion.reminder = !educacion.reminder;
+
+        /*console.log(educacion.reminder)*/
+    this.educacionService.updateEducacionReminder(educacion).subscribe();
+    //this.educacionService.updateEducacionReminder(educacion).subscribe((educacion)=>(
+     // this.educaciones.(educacion)))
+    /*la logica lo manejamos en comppnenete y 
+    se lo pasamos al servicio para que aga la terea*/
+    /*el servicio habla con la base de datos
+    la logica lo manejamos en el componenete*/
+  }
+  //fin editar
 }

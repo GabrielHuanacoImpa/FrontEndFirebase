@@ -35,6 +35,8 @@ import { IniciarSesionComponent } from './components/iniciar-sesion/iniciar-sesi
 import { ButtonAddEduComponent } from './components/button-add-edu/button-add-edu.component';
 //import { AddEduComponent } from './add-edu/add-edu.component';
 import { AddEduComponent } from './components/add-edu/add-edu.component';
+import { EditEduComponent } from './components/edit-edu/edit-edu.component';
+import { ModalEditEduComponent } from './components/modal-edit-edu/modal-edit-edu.component';
 
 //import {HttpClientModule} from '@angular/common/http';
 
@@ -72,6 +74,8 @@ const appRoutes: Routes = [
     IniciarSesionComponent,
     ButtonAddEduComponent,
     AddEduComponent,
+    EditEduComponent,
+    ModalEditEduComponent,
     
   ],
   imports: [

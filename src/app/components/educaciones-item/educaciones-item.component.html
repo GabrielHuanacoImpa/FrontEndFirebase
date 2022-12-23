@@ -3,8 +3,9 @@
 <div 
     class="educacion"
     [ngClass]="{ reminder: educacion.reminder }"
-    (click)="onToggle(educacion)"
+   
 >
+<!-- (click)="onToggle(educacion)"-->
     <div class= "row"> 
         <div class="col-md-2">           
             <img  class="images" src={{educacion.image_institucion}} width="120">
@@ -17,9 +18,11 @@
                 {{educacion.titulo}} <br>
                 {{educacion.domicilio}} <br>
                 {{educacion.fecha_inicio}} - {{educacion.fecha_fin}}<br><br>
+                <app-modal-edit-edu></app-modal-edit-edu>
             </h5>
             <h6>
                 
+            <!--*ngIf="showEditEdu"-->
             </h6>
 
         </div>
@@ -27,12 +30,21 @@
             <h5>
                 <div class= "row"> 
                     <div class="col-md-5">
-                        <fa-icon 
-                        [icon]="faPencil"
-                        [ngStyle] = "{'color': 'green'}" 
-                        (click)="onDelete(educacion)" 
-                        ></fa-icon>
+
+
+                        <button type="button"  data-bs-toggle="modal" attr.data-bs-target="#ModalEdu{{educacion.id}}">
+                            <fa-icon 
+                            [icon]="faPencil"
+                            [ngStyle] = "{'color': 'green'}" 
+                            
+                            ></fa-icon>
+                        </button>
+
                     </div>
+
+                    <!-- (click)="onEdit(educacion)               "   (click)="onToggleEdit(educacion)"
+                     data-bs-toggle="modal" data-bs-target="#ModalEdu{{educacion.id}}"
+                    -->
 
                     <div class="col-md-7">
                         <fa-icon 
@@ -47,6 +59,24 @@
 
     </div>
 
+
+    <div class="modal fade" id="ModalEdu{{educacion.id}}" tabindex="-1" aria-labelledby="ModalEduLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="ModalEduLabel">Editar Datos</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              
+                <app-edit-edu [educacion]="educacion" (onEdit)="onEdit($event)" >  </app-edit-edu>
+    
+            </div>
+
+          </div>
+        </div>
+      </div>
+    
 
 </div>
 
