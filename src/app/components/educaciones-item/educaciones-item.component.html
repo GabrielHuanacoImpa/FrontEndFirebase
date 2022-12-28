@@ -18,7 +18,10 @@
                 {{educacion.titulo}} <br>
                 {{educacion.domicilio}} <br>
                 {{educacion.fecha_inicio}} - {{educacion.fecha_fin}}<br><br>
+                <!--
                 <app-modal-edit-edu></app-modal-edit-edu>
+                -->
+
             </h5>
             <h6>
                 
@@ -32,7 +35,7 @@
                     <div class="col-md-5">
 
 
-                        <button type="button"  data-bs-toggle="modal" attr.data-bs-target="#ModalEdu{{educacion.id}}">
+                        <button type="button" class="border border-0" data-bs-toggle="modal" attr.data-bs-target="#ModalEdu{{educacion.id}}">
                             <fa-icon 
                             [icon]="faPencil"
                             [ngStyle] = "{'color': 'green'}" 
