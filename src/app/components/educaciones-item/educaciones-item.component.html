@@ -2,10 +2,12 @@
 <!-- Es nuestra tarjeta-->
 <div 
     class="educacion"
-    [ngClass]="{ reminder: educacion.reminder }"
+    
     
 >
-<!-- (click)="onToggle(educacion)"-->
+<!-- 
+    [ngClass]="{ reminder: educacion.reminder }"
+    (click)="onToggle(educacion)"-->
 
     <div class= "row"> 
         <div class="col-md-2">           
@@ -25,8 +27,7 @@
 
             </h5>
             <h6>
-                
-            <!--*ngIf="showEditEdu"-->
+                Fecha de ultima actualizacion: {{educacion.ultima_actualizacion}} 
             </h6>
 
         </div>
@@ -35,7 +36,7 @@
                 <div class= "row"> 
                     <div class="col-md-5">
 
-
+                        <!--Inicia llamado de Modal Editar Educacion-->
                         <button type="button" class="border border-0" data-bs-toggle="modal" attr.data-bs-target="#ModalEdu{{educacion.id}}">
                             <fa-icon 
                             [icon]="faPencil"
@@ -43,7 +44,7 @@
                             
                             ></fa-icon>
                         </button>
-
+                        <!--Fin llamado de Modal Editar Educacion--> 
                     </div>
 
                     <!-- (click)="onEdit(educacion)               "   (click)="onToggleEdit(educacion)"
@@ -63,7 +64,7 @@
 
     </div>
 
-
+    <!--Inicio de Modal Editar Educacion-->
     <div class="modal fade" id="ModalEdu{{educacion.id}}" tabindex="-1" aria-labelledby="ModalEduLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -80,7 +81,7 @@
           </div>
         </div>
       </div>
-    
+    <!--FIN  de Modal Editar Educacion-->
 
 </div>
 

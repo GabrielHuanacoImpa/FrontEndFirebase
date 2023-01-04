@@ -34,6 +34,11 @@ export class ExperienciasItemComponent implements OnInit {
     this.onToggleReminder.emit(experiencia);
   }
   */
+  onEditar(experiencia: Experiencia){
+    //console.log(experiencia);
+    //this.onEditEducacion.emit(educacion);
+    this.experiencia =experiencia;
+  }
 }
 
 

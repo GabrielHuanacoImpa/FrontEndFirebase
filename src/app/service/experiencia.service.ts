@@ -23,6 +23,8 @@ export class ExperienciaService {
   //private apiUrl = 'http://localhost:5002/experiencias';
   private apiUrl = 'http://localhost:8080/experiencia/traer';
   private apiUrlCrear='http://localhost:8080/experiencia/crear';
+  private apiUrlEditar='http://localhost:8080/experiencia/editar';
+  private apiUrlDelete='http://localhost:8080/experiencia/borrar'
   constructor(
     /*inicializamos el metodo*/
     private http: HttpClient
@@ -34,13 +36,15 @@ export class ExperienciaService {
   }
   deleteExperiencia(experiencia: Experiencia): Observable<Experiencia> {
     /*const url = '${this.apiUrl}/${task.id}';*/
-    const url = `${this.apiUrl}/${experiencia.id}`;
+    const url = `${this.apiUrlDelete}/${experiencia.id}`;
+    console.log(url);
     return this.http.delete<Experiencia>(url)
   }
 
   updateExperienciaReminder(experiencia: Experiencia): Observable<Experiencia> {
-    const url = `${this.apiUrl}/${experiencia.id}`;
+    const url = `${this.apiUrlEditar}/${experiencia.id}`;
     return this.http.put<Experiencia>(url, experiencia, httpOptions)
+    //return this.http.put<Experiencia>(url, experiencia)
     /*lo maneja como json : indicado por httpOptions*/
     /*es para informarle al Backend que le estamos enviando un json en root*/
   }

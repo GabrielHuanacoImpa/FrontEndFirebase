@@ -39,7 +39,7 @@ export class EducacionesItemComponent implements OnInit {
   }
 
   onEditar(educacion: Educacion){
-    console.log(educacion);
+    //console.log(educacion);
     //this.onEditEducacion.emit(educacion);
     this.educacion =educacion;
   }

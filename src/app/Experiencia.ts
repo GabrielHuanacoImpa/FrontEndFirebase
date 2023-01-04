@@ -19,10 +19,10 @@ export interface Experiencia {
     tipo: string;
     fecha_inicio : Date;
     fecha_fin : Date;
-    lugar : String;
+    lugar : string;
     fecha_ultima_actualizacion: Date;
-    image_logo : String;
-    //reminder: number;
+    image_logo : string;
+    reminder: number;
     persona_id : number;
 
 }

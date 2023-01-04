@@ -26,7 +26,7 @@
                 {{experiencia.lugar}} <br><br>
             </h5>
             <h6>
-                {{experiencia.fecha_ultima_actualizacion}} 
+                Fecha de ultima actualizacion: {{experiencia.fecha_ultima_actualizacion}} 
             </h6>
             
         </div>
@@ -34,11 +34,16 @@
             <h5>
                 <div class= "row"> 
                     <div class="col-md-5">
-                        <fa-icon 
-                        [icon]="faPencil"
-                        [ngStyle] = "{'color': 'green'}" 
-                        (click)="onDelete(experiencia)" 
-                        ></fa-icon>
+                        <!--Inicia llamado de Modal Editar -->
+                        <button type="button" class="border border-0" data-bs-toggle="modal" attr.data-bs-target="#ModalExp{{experiencia.id}}">
+                            <fa-icon 
+                            [icon]="faPencil"
+                            [ngStyle] = "{'color': 'green'}" 
+                             
+                            ></fa-icon>
+                        </button>
+                        <!--Fin llamado de Modal Editar --> 
+
                     </div>
 
                     <div class="col-md-7">
@@ -54,5 +59,23 @@
 
     </div>
 
+    <!--Inicio de Modal Editar -->
+    <div class="modal fade" id="ModalExp{{experiencia.id}}" tabindex="-1" aria-labelledby="ModalEduLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="ModalEduLabel">Editar Datos</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            
+                <app-edit-exp [experiencia]="experiencia" (onEdit)="onEditar($event)" >  </app-edit-exp>
+
+            </div>
+
+        </div>
+        </div>
+    </div>
+    <!--FIN  de Modal Editar Educacion-->
 
 </div>

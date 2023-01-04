@@ -32,7 +32,7 @@ export class ExperienciasComponent implements OnInit {
   obtenemos la lista de tareas a traves de un servicio 
   cuando se monta el componente de tarea */
   }
-  deleteTask(experiencia: Experiencia){
+  deleteExperiencia(experiencia: Experiencia){
     /*console.log("deleteTask");*/
     this.experienciaService.deleteExperiencia(experiencia)
       .subscribe(

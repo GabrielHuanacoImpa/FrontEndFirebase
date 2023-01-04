@@ -38,9 +38,10 @@
                 <app-experiencias-item 
                 *ngFor="let experiencia of experiencias"
                 [experiencia] = "experiencia"
-                (onDeleteTask)="deleteTask(experiencia)"
-                (onToggleReminder)="toggleReminder(experiencia)"
+                (onDeleteExperiencia)="deleteExperiencia(experiencia)"
+                
                 >    
+                <!--(onToggleReminder)="toggleReminder(experiencia)"-->
                 </app-experiencias-item> 
 
 

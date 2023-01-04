@@ -7,7 +7,7 @@
             <!-- Boton Alta-->
                 <app-button-add-edu 
                         color="{{showAddEdu ? 'red' : 'green'}}" 
-                        text="{{showAddEdu ? 'Close Alta' : 'Add Edu.'}}" 
+                        text="{{showAddEdu ? 'Close Alta' : 'Alta Educacion.'}}" 
                         (btnClick)="toggleAddEdu()"
                         
                         
@@ -57,11 +57,16 @@
                 *ngFor="let educacion of educaciones"
                 [educacion] = "educacion"
                 (onDeleteEducacion)="deleteEducacion(educacion)"
+
+                
+                
+                >
+                
+                <!--
                 (onToggleReminder)="toggleReminder(educacion)"
                 (onEditEducacion)="editEducacion(educacion)"
-                
-                
-                >    
+
+                -->
                 
                 </app-educaciones-item> 
 

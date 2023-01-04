@@ -60,7 +60,7 @@ export class EditEduComponent implements OnInit {
     this.ultima_actualizacion=this.educacion.ultima_actualizacion;
     this.reminder=this.educacion.reminder;
     this.persona_id=this.educacion.persona_id;
-  console.log(this.educacion);
+  //console.log(this.educacion);
   }
 
   onSubmit(){
@@ -74,11 +74,12 @@ export class EditEduComponent implements OnInit {
       
       const {id,institucion,titulo,domicilio,fecha_inicio,fecha_fin,image_institucion,ultima_actualizacion,reminder,persona_id} = this
       const newEdu = {id,institucion,titulo,domicilio,fecha_inicio,fecha_fin,image_institucion,ultima_actualizacion,reminder,persona_id}
-      console.log('Enviando evento');
+      //console.log('Enviando evento');
      
       
       this.educacionService.updateEducacionReminder(newEdu).subscribe(response=>{
-        console.log(response);this.onEdit.emit(response);});
+        //console.log(response);
+        this.onEdit.emit(response);});
        //envia objeto Educacion fuera del componenete, lo emite
   }
 

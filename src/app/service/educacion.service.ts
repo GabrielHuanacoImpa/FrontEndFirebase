@@ -51,7 +51,7 @@ export class EducacionService {
 
   updateEducacionReminder(educacion: Educacion): Observable<Educacion> {
     const url = `${this.apiUrlUpdateR}/${educacion.id}`;
-    console.log(educacion);
+    //console.log(educacion);
     //return this.http.put<Educacion>(url, educacion, httpOptions)
     return this.http.put<Educacion>(url, educacion)
     /*lo maneja como json : indicado por httpOptions*/
