@@ -15,8 +15,8 @@ export class EducacionesItemComponent implements OnInit {
   @Input() educacion: Educacion = EDUCACIONES[0];
   @Output() onDeleteEducacion: EventEmitter<Educacion> = new EventEmitter();
   @Output() onToggleReminder: EventEmitter<Educacion> = new EventEmitter();
-  @Output() onEditEducacion: EventEmitter<Educacion> = new EventEmitter();
-  @Output() onToggleEditar: EventEmitter<Educacion> = new EventEmitter();
+  //@Output() onEditEducacion: EventEmitter<Educacion> = new EventEmitter();
+  //@Output() onToggleEditar: EventEmitter<Educacion> = new EventEmitter();
   showEditEdu: boolean = false; // se muestra o no 
 
   faPencil = faPencil; 
@@ -38,17 +38,17 @@ export class EducacionesItemComponent implements OnInit {
     this.onToggleReminder.emit(educacion);
   }
 
-  onEdit(educacion: Educacion){
+  onEditar(educacion: Educacion){
     console.log(educacion);
     //this.onEditEducacion.emit(educacion);
     this.educacion =educacion;
   }
-
+/*
   onToggleEdit(educacion: Educacion){
-    /*console.log(educacion);*/
+    
     this.showEditEdu === !this.showEditEdu;
     this.onToggleEditar.emit(educacion);
   }
-
+*/
 
 }

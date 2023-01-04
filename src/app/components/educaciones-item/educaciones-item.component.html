@@ -3,9 +3,10 @@
 <div 
     class="educacion"
     [ngClass]="{ reminder: educacion.reminder }"
-   
+    
 >
 <!-- (click)="onToggle(educacion)"-->
+
     <div class= "row"> 
         <div class="col-md-2">           
             <img  class="images" src={{educacion.image_institucion}} width="120">
@@ -72,7 +73,7 @@
             </div>
             <div class="modal-body">
               
-                <app-edit-edu [educacion]="educacion" (onEdit)="onEdit($event)" >  </app-edit-edu>
+                <app-edit-edu [educacion]="educacion" (onEdit)="onEditar($event)" >  </app-edit-edu>
     
             </div>
 

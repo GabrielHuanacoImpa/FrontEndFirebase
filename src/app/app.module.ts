@@ -37,6 +37,7 @@ import { ButtonAddEduComponent } from './components/button-add-edu/button-add-ed
 import { AddEduComponent } from './components/add-edu/add-edu.component';
 import { EditEduComponent } from './components/edit-edu/edit-edu.component';
 import { ModalEditEduComponent } from './components/modal-edit-edu/modal-edit-edu.component';
+import { AddExpComponent } from './components/add-exp/add-exp.component';
 
 //import {HttpClientModule} from '@angular/common/http';
 
@@ -76,6 +77,7 @@ const appRoutes: Routes = [
     AddEduComponent,
     EditEduComponent,
     ModalEditEduComponent,
+    AddExpComponent,
     
   ],
   imports: [

@@ -61,7 +61,7 @@ export class EducacionService {
   //private institucion : string="";
   addEducacion(educacion: Educacion): Observable<Educacion> {
         
-    console.log(JSON.stringify(educacion))
+    //console.log(JSON.stringify(educacion))
 
     return this.http.post<Educacion>('http://localhost:8080/educacion/crear', educacion, httpOptions);
 

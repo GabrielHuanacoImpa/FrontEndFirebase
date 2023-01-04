@@ -13,7 +13,7 @@ import { faTrashCan, faPencil } from '@fortawesome/free-solid-svg-icons';
 export class ExperienciasItemComponent implements OnInit {
   @Input() experiencia: Experiencia = EXPERIENCIAS[0];
   @Output() onDeleteExperiencia: EventEmitter<Experiencia> = new EventEmitter();
-  @Output() onToggleReminder: EventEmitter<Experiencia> = new EventEmitter();
+  //@Output() onToggleReminder: EventEmitter<Experiencia> = new EventEmitter();
 
   faPencil = faPencil; 
   
@@ -28,10 +28,12 @@ export class ExperienciasItemComponent implements OnInit {
     /*console.log(task);*/
     this.onDeleteExperiencia.emit(experiencia);
   }
-
+/*
   onToggle(experiencia: Experiencia){
-    /*console.log(task);*/
+    
     this.onToggleReminder.emit(experiencia);
   }
+  */
 }
+
 

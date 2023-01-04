@@ -22,6 +22,7 @@ const httpOptions = {
 export class ExperienciaService {
   //private apiUrl = 'http://localhost:5002/experiencias';
   private apiUrl = 'http://localhost:8080/experiencia/traer';
+  private apiUrlCrear='http://localhost:8080/experiencia/crear';
   constructor(
     /*inicializamos el metodo*/
     private http: HttpClient
@@ -45,6 +46,6 @@ export class ExperienciaService {
   }
 
   addExperiencia(experiencia: Experiencia): Observable<Experiencia> {
-    return this.http.post<Experiencia>(this.apiUrl, experiencia, httpOptions);
+    return this.http.post<Experiencia>(this.apiUrlCrear, experiencia, httpOptions);
   }
 }

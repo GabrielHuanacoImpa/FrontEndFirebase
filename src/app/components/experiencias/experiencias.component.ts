@@ -45,7 +45,8 @@ export class ExperienciasComponent implements OnInit {
   }
 
   toggleReminder(experiencia: Experiencia){
-    experiencia.reminder = !experiencia.reminder;
+    //experiencia.reminder = !experiencia.reminder;
+    
     /*console.log(experiencia.reminder)*/
     this.experienciaService.updateExperienciaReminder(experiencia).subscribe();
     /*la logica lo manejamos en comppnenete y 
@@ -54,8 +55,8 @@ export class ExperienciasComponent implements OnInit {
     la logica lo manejamos en el componenete*/
   }
 
-  addTask(experiencia: Experiencia){
-    //console.log(experiencia); 
+  addExperiencia(experiencia: Experiencia){
+    console.log(experiencia); 
     // recibimos los datos de la tarea
     // esta tarea que recibimos aca deberiamos 
     // pasarla a un servicio que nos permita guardarla en la base de datos
@@ -68,8 +69,16 @@ export class ExperienciasComponent implements OnInit {
 
     this.experienciaService.addExperiencia(experiencia).subscribe((experiencia)=>(
         this.experiencias.push(experiencia)
+  /* 
+    this.experienciaService.addExperiencia(experiencia).subscribe((response)=>(
+          this.experiencias.push(response)
+   */       
     ))
     //agrego la nueva tarea y se inserta en la base de datos
+
+        //this.educacionService.updateEducacionReminder(newEdu).subscribe(response=>{
+      //console.log(response);this.onEdit.emit(response);});
+     //envia objeto Educacion fuera del componenete, lo emite
 
   }
 

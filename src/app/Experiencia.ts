@@ -10,9 +10,11 @@ export interface Experiencia {
     image_logo: string;
     reminder: boolean;
     */
+
+ 
     id?: number; //cuando creamos podria no venir 
     nombre_empresa: string;
-    es_trabajo_actual : boolean;
+    es_trabajo_actual : number;
     descripcion : string;
     tipo: string;
     fecha_inicio : Date;
@@ -20,7 +22,8 @@ export interface Experiencia {
     lugar : String;
     fecha_ultima_actualizacion: Date;
     image_logo : String;
-    reminder: boolean;
+    //reminder: number;
     persona_id : number;
 
 }
+
