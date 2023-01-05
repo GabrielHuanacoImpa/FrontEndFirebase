@@ -2,9 +2,15 @@
 <!-- Es nuestra tarjeta-->
 <div 
     class="proyecto"
+
+>
+<!-- 
     [ngClass]="{ reminder: proyecto.reminder }"
     (click)="onToggle(proyecto)"
->
+
+-->
+
+
     <div class= "row"> 
         <div class="col-md-2">           
             <img  class="images" src={{proyecto.url_image_logo}} width="120">
@@ -22,7 +28,7 @@
                 {{proyecto.tipo_ocupacion}} <br><br>
             </h5>
             <h6>
-                {{proyecto.ultima_actualizacion}} 
+                Fecha de ultima actualizacion: {{proyecto.ultima_actualizacion}} 
             </h6>
                       
            

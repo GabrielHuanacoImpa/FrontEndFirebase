@@ -24,6 +24,7 @@ export class ProyectoService {
 
   //private apiUrl = 'http://localhost:5007/proyectos';
   private apiUrl = 'http://localhost:8080/proyecto/traer';
+  private apiCrear = 'http://localhost:8080/proyecto/crear';
   constructor(
     /*inicializamos el metodo*/
     private http: HttpClient
@@ -47,6 +48,6 @@ export class ProyectoService {
   }
 
   addProyecto(proyecto: Proyecto): Observable<Proyecto> {
-    return this.http.post<Proyecto>(this.apiUrl, proyecto, httpOptions);
+    return this.http.post<Proyecto>(this.apiCrear, proyecto, httpOptions);
   }
 }

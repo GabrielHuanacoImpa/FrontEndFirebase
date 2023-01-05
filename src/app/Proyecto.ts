@@ -22,8 +22,8 @@ export interface Proyecto {
     domicilio: string;
     tipo_ocupacion: string;
     ultima_actualizacion: Date;
-    url_image_logo: String;
-    reminder: boolean;
+    url_image_logo: string;
+    reminder: number;
     persona_id: number;
 
 

@@ -56,7 +56,7 @@ export class ExperienciasComponent implements OnInit {
   }
 
   addExperiencia(experiencia: Experiencia){
-    console.log(experiencia); 
+    //console.log(experiencia); 
     // recibimos los datos de la tarea
     // esta tarea que recibimos aca deberiamos 
     // pasarla a un servicio que nos permita guardarla en la base de datos

@@ -47,7 +47,7 @@ export class ProyectosComponent implements OnInit {
   }
 
   toggleReminder(proyecto: Proyecto){
-    proyecto.reminder = !proyecto.reminder;
+    //proyecto.reminder = !proyecto.reminder;
     /*console.log(proyecto.reminder)*/
     this.proyectoService.updateProyectoReminder(proyecto).subscribe();
     /*la logica lo manejamos en comppnenete y 
