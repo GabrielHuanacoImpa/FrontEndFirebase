@@ -40,6 +40,7 @@ import { ModalEditEduComponent } from './components/modal-edit-edu/modal-edit-ed
 import { AddExpComponent } from './components/add-exp/add-exp.component';
 import { EditExpComponent } from './components/edit-exp/edit-exp.component';
 import { AddProComponent } from './components/add-pro/add-pro.component';
+import { EditProComponent } from './components/edit-pro/edit-pro.component';
 
 //import {HttpClientModule} from '@angular/common/http';
 
@@ -82,6 +83,7 @@ const appRoutes: Routes = [
     AddExpComponent,
     EditExpComponent,
     AddProComponent,
+    EditProComponent,
     
   ],
   imports: [

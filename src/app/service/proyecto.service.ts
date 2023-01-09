@@ -25,6 +25,8 @@ export class ProyectoService {
   //private apiUrl = 'http://localhost:5007/proyectos';
   private apiUrl = 'http://localhost:8080/proyecto/traer';
   private apiCrear = 'http://localhost:8080/proyecto/crear';
+  private apiUrlEditar='http://localhost:8080/proyecto/editar';
+  private apiUrlDelete='http://localhost:8080/proyecto/borrar';
   constructor(
     /*inicializamos el metodo*/
     private http: HttpClient
@@ -36,12 +38,12 @@ export class ProyectoService {
   }
   deleteProyecto(proyecto: Proyecto): Observable<Proyecto> {
     /*const url = '${this.apiUrl}/${proyecto.id}';*/
-    const url = `${this.apiUrl}/${proyecto.id}`;
+    const url = `${this.apiUrlDelete}/${proyecto.id}`;
     return this.http.delete<Proyecto>(url)
   }
 
   updateProyectoReminder(proyecto: Proyecto): Observable<Proyecto> {
-    const url = `${this.apiUrl}/${proyecto.id}`;
+    const url = `${this.apiUrlEditar}/${proyecto.id}`;
     return this.http.put<Proyecto>(url, proyecto, httpOptions)
     /*lo maneja como json : indicado por httpOptions*/
     /*es para informarle al Backend que le estamos enviando un json en root*/

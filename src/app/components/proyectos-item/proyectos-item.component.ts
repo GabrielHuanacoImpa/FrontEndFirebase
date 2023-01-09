@@ -13,7 +13,7 @@ import { faTrashCan, faPencil } from '@fortawesome/free-solid-svg-icons';
 export class ProyectosItemComponent implements OnInit {
   @Input() proyecto: Proyecto = PROYECTOS[0];
   @Output() onDeleteProyecto: EventEmitter<Proyecto> = new EventEmitter();
-  @Output() onToggleReminder: EventEmitter<Proyecto> = new EventEmitter();
+  //@Output() onToggleReminder: EventEmitter<Proyecto> = new EventEmitter();
   faPencil = faPencil; 
   
   faTrashCan=faTrashCan; 
@@ -26,9 +26,16 @@ export class ProyectosItemComponent implements OnInit {
     /*console.log(proyecto);*/
     this.onDeleteProyecto.emit(proyecto);
   }
-
+/*
   onToggle(proyecto: Proyecto){
-    /*console.log(proyecto);*/
+   
     this.onToggleReminder.emit(proyecto);
+  }
+
+  */
+  onEditar(proyecto: Proyecto){
+    //console.log(proyecto);
+    //this.onEditEducacion.emit(educacion);
+    this.proyecto =proyecto;
   }
 }
