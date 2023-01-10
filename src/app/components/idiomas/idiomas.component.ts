@@ -47,7 +47,7 @@ export class IdiomasComponent implements OnInit {
   }
 
   toggleReminder(idioma: Idioma){
-    idioma.reminder = !idioma.reminder;
+    //idioma.reminder = !idioma.reminder;
     /*console.log(idioma.reminder)*/
     this.idiomaService.updateIdiomaReminder(idioma).subscribe();
     /*la logica lo manejamos en comppnenete y 

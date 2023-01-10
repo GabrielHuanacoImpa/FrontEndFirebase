@@ -8,6 +8,9 @@ import {Observable, of} from 'rxjs'; /* asincronico, la base de datos lleva su t
 import {Proyecto} from '../Proyecto' //interface
 import {PROYECTOS} from '../mock-proyectos'; //lista de tareas
 
+//para usar variables globales de URL
+import { environment } from '../../environments/environment';
+
 /*El servicio ya maneja todas las tareas ya no el componente*/
 /* El componente solo llama a los servicios */
 const httpOptions = {
@@ -23,10 +26,12 @@ const httpOptions = {
 export class ProyectoService {
 
   //private apiUrl = 'http://localhost:5007/proyectos';
-  private apiUrl = 'http://localhost:8080/proyecto/traer';
-  private apiCrear = 'http://localhost:8080/proyecto/crear';
-  private apiUrlEditar='http://localhost:8080/proyecto/editar';
-  private apiUrlDelete='http://localhost:8080/proyecto/borrar';
+  private apiUrl = environment.APIURL+'proyecto/traer';
+  
+  private apiUrlEditar= environment.APIURL+'proyecto/editar';
+  private apiUrlDelete= environment.APIURL+'proyecto/borrar';
+  private apiCrear = environment.APIURL+'proyecto/crear';
+
   constructor(
     /*inicializamos el metodo*/
     private http: HttpClient
@@ -50,6 +55,8 @@ export class ProyectoService {
   }
 
   addProyecto(proyecto: Proyecto): Observable<Proyecto> {
+    //console.log('ENTORNO:'+environment.APIURL);
     return this.http.post<Proyecto>(this.apiCrear, proyecto, httpOptions);
+    
   }
 }

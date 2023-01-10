@@ -3,6 +3,6 @@ export interface Idioma {
     id?: number; //cuando creamos podria no venir
     habilidad: string;
     nivel: number;
-    reminder: boolean;
+    //reminder: number;
     persona_id: number;
 }

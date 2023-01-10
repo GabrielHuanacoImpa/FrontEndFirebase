@@ -14,7 +14,7 @@ export class IdiomasItemComponent implements OnInit {
 
   @Input() idioma: Idioma = IDIOMAS[0];
   @Output() onDeleteIdioma: EventEmitter<Idioma> = new EventEmitter();
-  @Output() onToggleReminder: EventEmitter<Idioma> = new EventEmitter();
+  //@Output() onToggleReminder: EventEmitter<Idioma> = new EventEmitter();
   faPencil = faPencil; 
   
   faTrashCan=faTrashCan;
@@ -27,10 +27,16 @@ export class IdiomasItemComponent implements OnInit {
     /*console.log(idioma);*/
     this.onDeleteIdioma.emit(idioma);
   }
-
+/*
   onToggle(idioma: Idioma){
-    /*console.log(idioma);*/
+    
     this.onToggleReminder.emit(idioma);
   }
+*/
+onEditar(idioma: Idioma){
+  //console.log(idioma);
+  //this.onEditEducacion.emit(educacion);
+  this.idioma =idioma;
+}
 
 }

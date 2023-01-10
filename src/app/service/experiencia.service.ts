@@ -8,6 +8,9 @@ import {Observable, of} from 'rxjs'; /* asincronico, la base de datos lleva su t
 import {Experiencia} from '../Experiencia' //interface
 import {EXPERIENCIAS} from '../mock-experiencias'; //lista de tareas
 
+//para usar variables globales de URL
+import { environment } from '../../environments/environment';
+
 /*El servicio ya maneja todas las tareas ya no el componente*/
 /* El componente solo llama a los servicios */
 const httpOptions = {
@@ -21,10 +24,17 @@ const httpOptions = {
 })
 export class ExperienciaService {
   //private apiUrl = 'http://localhost:5002/experiencias';
+  /*
   private apiUrl = 'http://localhost:8080/experiencia/traer';
   private apiUrlCrear='http://localhost:8080/experiencia/crear';
   private apiUrlEditar='http://localhost:8080/experiencia/editar';
   private apiUrlDelete='http://localhost:8080/experiencia/borrar'
+*/
+  private apiUrl = environment.APIURL+'experiencia/traer';
+  private apiUrlCrear= environment.APIURL+'experiencia/crear';
+  private apiUrlEditar= environment.APIURL+'experiencia/editar';
+  private apiUrlDelete= environment.APIURL+'experiencia/borrar'
+
   constructor(
     /*inicializamos el metodo*/
     private http: HttpClient

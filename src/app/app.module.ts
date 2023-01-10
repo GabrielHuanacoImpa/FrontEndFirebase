@@ -41,6 +41,8 @@ import { AddExpComponent } from './components/add-exp/add-exp.component';
 import { EditExpComponent } from './components/edit-exp/edit-exp.component';
 import { AddProComponent } from './components/add-pro/add-pro.component';
 import { EditProComponent } from './components/edit-pro/edit-pro.component';
+import { AddIdiomaComponent } from './components/add-idioma/add-idioma.component';
+import { EditIdiomaComponent } from './components/edit-idioma/edit-idioma.component';
 
 //import {HttpClientModule} from '@angular/common/http';
 
@@ -84,6 +86,8 @@ const appRoutes: Routes = [
     EditExpComponent,
     AddProComponent,
     EditProComponent,
+    AddIdiomaComponent,
+    EditIdiomaComponent,
     
   ],
   imports: [

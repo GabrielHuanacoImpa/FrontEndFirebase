@@ -8,6 +8,9 @@ import {Observable, of} from 'rxjs'; /* asincronico, la base de datos lleva su t
 import {Idioma} from '../Idioma' //interface
 import {IDIOMAS} from '../mock-idiomas'; //lista de tareas
 
+//para usar variables globales de URL
+import { environment } from '../../environments/environment';
+
 /*El servicio ya maneja todas las tareas ya no el componente*/
 /* El componente solo llama a los servicios */
 const httpOptions = {
@@ -24,7 +27,13 @@ const httpOptions = {
 export class IdiomaService {
 
   //private apiUrl = 'http://localhost:5006/idiomas';
-  private apiUrl = 'http://localhost:8080/idioma/traer';
+  //private apiUrl = 'http://localhost:8080/idioma/traer';
+
+  private apiUrl = environment.APIURL+'idioma/traer';
+  private apiUrlEditar= environment.APIURL+'idioma/editar';
+  private apiUrlDelete= environment.APIURL+'idioma/borrar';
+  private apiCrear = environment.APIURL+'idioma/crear';
+
   constructor(
     /*inicializamos el metodo*/
     private http: HttpClient
@@ -36,18 +45,18 @@ export class IdiomaService {
   }
   deleteIdioma(idioma: Idioma): Observable<Idioma> {
     /*const url = '${this.apiUrl}/${idioma.id}';*/
-    const url = `${this.apiUrl}/${idioma.id}`;
+    const url = `${this.apiUrlDelete}/${idioma.id}`;
     return this.http.delete<Idioma>(url)
   }
 
   updateIdiomaReminder(idioma: Idioma): Observable<Idioma> {
-    const url = `${this.apiUrl}/${idioma.id}`;
+    const url = `${this.apiUrlEditar}/${idioma.id}`;
     return this.http.put<Idioma>(url, idioma, httpOptions)
     /*lo maneja como json : indicado por httpOptions*/
     /*es para informarle al Backend que le estamos enviando un json en root*/
   }
 
   addIdioma(idioma: Idioma): Observable<Idioma> {
-    return this.http.post<Idioma>(this.apiUrl, idioma, httpOptions);
+    return this.http.post<Idioma>(this.apiCrear, idioma, httpOptions);
   }
 }
