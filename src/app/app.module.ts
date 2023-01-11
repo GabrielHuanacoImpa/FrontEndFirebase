@@ -43,6 +43,11 @@ import { AddProComponent } from './components/add-pro/add-pro.component';
 import { EditProComponent } from './components/edit-pro/edit-pro.component';
 import { AddIdiomaComponent } from './components/add-idioma/add-idioma.component';
 import { EditIdiomaComponent } from './components/edit-idioma/edit-idioma.component';
+import { AddHardSComponent } from './components/add-hard-s/add-hard-s.component';
+import { AddSoftSComponent } from './components/add-soft-s/add-soft-s.component';
+import { EditHardSComponent } from './components/edit-hard-s/edit-hard-s.component';
+import { EditSoftSComponent } from './components/edit-soft-s/edit-soft-s.component';
+//import { AddHSComponent } from './components/add-hs/add-hs.component';
 
 //import {HttpClientModule} from '@angular/common/http';
 
@@ -88,6 +93,11 @@ const appRoutes: Routes = [
     EditProComponent,
     AddIdiomaComponent,
     EditIdiomaComponent,
+    AddHardSComponent,
+    AddSoftSComponent,
+    EditHardSComponent,
+    EditSoftSComponent,
+    
     
   ],
   imports: [

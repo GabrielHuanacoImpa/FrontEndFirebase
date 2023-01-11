@@ -3,6 +3,6 @@ export interface SoftSkill {
     id?: number; //cuando creamos podria no venir
     habilidad: string;
     nivel: number;
-    reminder: boolean;
+    //reminder: boolean;
     persona_id:number; 
 }

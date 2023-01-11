@@ -14,7 +14,7 @@ export class HardSkillsItemComponent implements OnInit {
 
   @Input() hardSkill: HardSkill = HARDSKILLS[0];
   @Output() onDeleteHardSkill: EventEmitter<HardSkill> = new EventEmitter();
-  @Output() onToggleReminder: EventEmitter<HardSkill> = new EventEmitter();
+  //@Output() onToggleReminder: EventEmitter<HardSkill> = new EventEmitter();
   faPencil = faPencil; 
   
   faTrashCan=faTrashCan;
@@ -27,10 +27,16 @@ export class HardSkillsItemComponent implements OnInit {
     /*console.log(hardSkill);*/
     this.onDeleteHardSkill.emit(hardSkill);
   }
-
+/*
   onToggle(hardSkill: HardSkill){
-    /*console.log(hardSkill);*/
+    
     this.onToggleReminder.emit(hardSkill);
+  }
+*/
+  onEditar(hardSkill: HardSkill){
+    //console.log(idioma);
+    //this.onEditEducacion.emit(educacion);
+    this.hardSkill =hardSkill;
   }
 
 }

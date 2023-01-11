@@ -47,7 +47,7 @@ export class SoftSkillsComponent implements OnInit {
   }
 
   toggleReminder(softSkill: SoftSkill){
-    softSkill.reminder = !softSkill.reminder;
+    //softSkill.reminder = !softSkill.reminder;
     /*console.log(softSkill.reminder)*/
     this.softSkillService.updateSoftSkillReminder(softSkill).subscribe();
     /*la logica lo manejamos en comppnenete y 

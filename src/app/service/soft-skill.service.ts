@@ -8,6 +8,9 @@ import {Observable, of} from 'rxjs'; /* asincronico, la base de datos lleva su t
 import {SoftSkill} from '../SoftSkill' //interface
 import {SOFTSKILLS} from '../mock-softSkills'; //lista de tareas
 
+//para usar variables globales de URL
+import { environment } from '../../environments/environment';
+
 /*El servicio ya maneja todas las tareas ya no el componente*/
 /* El componente solo llama a los servicios */
 const httpOptions = {
@@ -23,7 +26,13 @@ const httpOptions = {
 export class SoftSkillService {
 
   //private apiUrl = 'http://localhost:5005/soft-Skills';
-  private apiUrl = 'http://localhost:8080/softskills/traer';
+  //private apiUrl = 'http://localhost:8080/softskills/traer';
+
+  private apiUrl = environment.APIURL+'softskills/traer';
+  private apiUrlEditar= environment.APIURL+'softskills/editar';
+  private apiUrlDelete= environment.APIURL+'softskills/borrar';
+  private apiCrear = environment.APIURL+'softskills/crear';
+
   constructor(
     /*inicializamos el metodo*/
     private http: HttpClient
@@ -35,18 +44,18 @@ export class SoftSkillService {
   }
   deleteSoftSkill(softSkill: SoftSkill): Observable<SoftSkill> {
     /*const url = '${this.apiUrl}/${softSkill.id}';*/
-    const url = `${this.apiUrl}/${softSkill.id}`;
+    const url = `${this.apiUrlDelete}/${softSkill.id}`;
     return this.http.delete<SoftSkill>(url)
   }
 
   updateSoftSkillReminder(softSkill: SoftSkill): Observable<SoftSkill> {
-    const url = `${this.apiUrl}/${softSkill.id}`;
+    const url = `${this.apiUrlEditar}/${softSkill.id}`;
     return this.http.put<SoftSkill>(url, softSkill, httpOptions)
     /*lo maneja como json : indicado por httpOptions*/
     /*es para informarle al Backend que le estamos enviando un json en root*/
   }
 
   addSoftSkill(softSkill: SoftSkill): Observable<SoftSkill> {
-    return this.http.post<SoftSkill>(this.apiUrl, softSkill, httpOptions);
+    return this.http.post<SoftSkill>(this.apiCrear, softSkill, httpOptions);
   }
 }

@@ -47,7 +47,7 @@ export class HardSkillsComponent implements OnInit {
   }
 
   toggleReminder(hardSkill: HardSkill){
-    hardSkill.reminder = !hardSkill.reminder;
+    //hardSkill.reminder = !hardSkill.reminder;
     /*console.log(hardSkill.reminder)*/
     this.hardSkillService.updateHardSkillReminder(hardSkill).subscribe();
     /*la logica lo manejamos en comppnenete y 

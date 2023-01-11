@@ -15,7 +15,7 @@ export class SoftSkillsItemComponent implements OnInit {
 
   @Input() softSkill: SoftSkill = SOFTSKILLS[0];
   @Output() onDeleteSoftSkill: EventEmitter<SoftSkill> = new EventEmitter();
-  @Output() onToggleReminder: EventEmitter<SoftSkill> = new EventEmitter();
+  //@Output() onToggleReminder: EventEmitter<SoftSkill> = new EventEmitter();
   faPencil = faPencil; 
   
   faTrashCan=faTrashCan; 
@@ -28,10 +28,16 @@ export class SoftSkillsItemComponent implements OnInit {
     /*console.log(softSkill);*/
     this.onDeleteSoftSkill.emit(softSkill);
   }
-
+/*
   onToggle(softSkill: SoftSkill){
-    /*console.log(softSkill);*/
+    
     this.onToggleReminder.emit(softSkill);
   }
+*/
+onEditar(softSkill: SoftSkill){
+  //console.log(idioma);
+  //this.onEditEducacion.emit(educacion);
+  this.softSkill =softSkill;
+}
 
 }
