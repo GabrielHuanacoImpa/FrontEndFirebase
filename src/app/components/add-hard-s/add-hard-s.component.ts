@@ -14,8 +14,8 @@ import { Subscription } from 'rxjs';
 export class AddHardSComponent implements OnInit {
   @Output() onAddHardS:EventEmitter<HardSkill> = new EventEmitter();
   id: number=0;
-  habilidad: string="";
-  nivel: number=0;
+  habilidadH: string="";
+  nivelH: number=0;
   persona_id: number=1;
 
   subscription?: Subscription;
@@ -27,15 +27,15 @@ export class AddHardSComponent implements OnInit {
   }
 
   onSubmit(){
-    if(this.habilidad.length === 0) {
+    if(this.habilidadH.length === 0) {
       alert("Por favor ingrese nombre de la habilidad");
       return
     }
 
 
     
-    const {id, habilidad, nivel, persona_id} = this
-    const newHs = {id, habilidad, nivel, persona_id}
+    const {id, habilidadH, nivelH, persona_id} = this
+    const newHs = {id, habilidadH, nivelH, persona_id}
     
    
     this.onAddHardS.emit(newHs); //envia objeto Experiencia fuera del componenete, lo emite 

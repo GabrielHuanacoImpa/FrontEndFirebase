@@ -21,8 +21,8 @@ export class EditHardSComponent implements OnInit {
   @Input() hardSkill: HardSkill = HARDSKILLS[0];
 
   id?: number=0;
-  habilidad: string="";
-  nivel: number=0;
+  habilidadH: string="";
+  nivelH: number=0;
   persona_id: number=1;
 
   subscription?: Subscription;
@@ -34,16 +34,16 @@ export class EditHardSComponent implements OnInit {
 
   ngOnInit(): void {
     this.id=this.hardSkill.id;
-    this.habilidad=this.hardSkill.habilidad;
-    this.nivel=this.hardSkill.nivel;
+    this.habilidadH=this.hardSkill.habilidadH;
+    this.nivelH=this.hardSkill.nivelH;
     this.persona_id=this.hardSkill.persona_id;
 
   }
 
   onSubmit(){
     
-    const {id, habilidad, nivel, persona_id} = this
-    const newHS = {id, habilidad, nivel, persona_id}
+    const {id, habilidadH, nivelH, persona_id} = this
+    const newHS = {id, habilidadH, nivelH, persona_id}
     
    
     this.hardSkillService.updateHardSkillReminder(newHS).subscribe(response=>{

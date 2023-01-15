@@ -14,9 +14,9 @@ export interface Proyecto {
     */
     id?: number; //cuando creamos podria no venir  
     nombre_proyecto: string;
-    fecha_inicio: Date;
-    fecha_fin:Date;
-    descripcion: string;
+    fecha_inicioP: Date;
+    fecha_finP:Date;
+    descripcionP: string;
     link: string;
     url_imagenes: string;
     domicilio: string;

@@ -16,9 +16,9 @@ export class AddProComponent implements OnInit {
 
   id: number=0;
   nombre_proyecto: string="";
-  fecha_inicio: Date= new Date("0000-00-00");
-  fecha_fin:Date= new Date("0000-00-00");
-  descripcion: string="";
+  fecha_inicioP: Date= new Date("0000-00-00");
+  fecha_finP:Date= new Date("0000-00-00");
+  descripcionP: string="";
   link: string="";
   url_imagenes: string="";
   domicilio: string="";
@@ -43,8 +43,8 @@ export class AddProComponent implements OnInit {
 
 
     
-    const {id, nombre_proyecto,fecha_inicio,fecha_fin,descripcion, link,url_imagenes, domicilio, tipo_ocupacion, ultima_actualizacion, url_image_logo, reminder,persona_id} = this
-    const newPro = {id, nombre_proyecto,fecha_inicio,fecha_fin,descripcion, link,url_imagenes, domicilio, tipo_ocupacion, ultima_actualizacion, url_image_logo, reminder,persona_id}
+    const {id, nombre_proyecto,fecha_inicioP,fecha_finP,descripcionP, link,url_imagenes, domicilio, tipo_ocupacion, ultima_actualizacion, url_image_logo, reminder,persona_id} = this
+    const newPro = {id, nombre_proyecto,fecha_inicioP,fecha_finP,descripcionP, link,url_imagenes, domicilio, tipo_ocupacion, ultima_actualizacion, url_image_logo, reminder,persona_id}
     
    
     this.onAddPro.emit(newPro); //envia objeto Experiencia fuera del componenete, lo emite 

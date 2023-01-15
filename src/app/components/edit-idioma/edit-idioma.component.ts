@@ -21,8 +21,8 @@ export class EditIdiomaComponent implements OnInit {
   @Input() idioma: Idioma = IDIOMAS[0];
 
   id?: number=0;
-  habilidad: string="";
-  nivel: number=0;
+  habilidadI: string="";
+  nivelI: number=0;
   persona_id: number=1;
 
   subscription?: Subscription;
@@ -33,16 +33,16 @@ export class EditIdiomaComponent implements OnInit {
 
   ngOnInit(): void {
     this.id=this.idioma.id;
-    this.habilidad=this.idioma.habilidad;
-    this.nivel=this.idioma.nivel;
+    this.habilidadI=this.idioma.habilidadI;
+    this.nivelI=this.idioma.nivelI;
     this.persona_id=this.idioma.persona_id;
 
   }
 
   onSubmit(){
     
-    const {id, habilidad, nivel, persona_id} = this
-    const newIdio = {id, habilidad, nivel, persona_id}
+    const {id, habilidadI, nivelI, persona_id} = this
+    const newIdio = {id, habilidadI, nivelI, persona_id}
     
    
     this.idiomaService.updateIdiomaReminder(newIdio).subscribe(response=>{
