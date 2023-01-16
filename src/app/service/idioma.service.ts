@@ -29,10 +29,10 @@ export class IdiomaService {
   //private apiUrl = 'http://localhost:5006/idiomas';
   //private apiUrl = 'http://localhost:8080/idioma/traer';
 
-  private apiUrl = environment.APIURL+'idioma/traer';
-  private apiUrlEditar= environment.APIURL+'idioma/editar';
-  private apiUrlDelete= environment.APIURL+'idioma/borrar';
-  private apiCrear = environment.APIURL+'idioma/crear';
+  private apiUrl = 'http://localhost:8080/'+'idioma/traer';
+  private apiUrlEditar= 'http://localhost:8080/'+'idioma/editar';
+  private apiUrlDelete= 'http://localhost:8080/'+'idioma/borrar';
+  private apiCrear = 'http://localhost:8080/'+'idioma/crear';
 
   constructor(
     /*inicializamos el metodo*/

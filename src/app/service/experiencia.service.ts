@@ -29,11 +29,18 @@ export class ExperienciaService {
   private apiUrlCrear='http://localhost:8080/experiencia/crear';
   private apiUrlEditar='http://localhost:8080/experiencia/editar';
   private apiUrlDelete='http://localhost:8080/experiencia/borrar'
-*/
+
   private apiUrl = environment.APIURL+'experiencia/traer';
   private apiUrlCrear= environment.APIURL+'experiencia/crear';
   private apiUrlEditar= environment.APIURL+'experiencia/editar';
   private apiUrlDelete= environment.APIURL+'experiencia/borrar'
+*/
+
+private apiUrl = 'http://localhost:8080/'+'experiencia/traer';
+private apiUrlCrear= 'http://localhost:8080/'+'experiencia/crear';
+private apiUrlEditar= 'http://localhost:8080/'+'experiencia/editar';
+private apiUrlDelete= 'http://localhost:8080/'+'experiencia/borrar'
+
 
   constructor(
     /*inicializamos el metodo*/

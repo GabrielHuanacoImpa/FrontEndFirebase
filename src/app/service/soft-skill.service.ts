@@ -27,11 +27,17 @@ export class SoftSkillService {
 
   //private apiUrl = 'http://localhost:5005/soft-Skills';
   //private apiUrl = 'http://localhost:8080/softskills/traer';
-
+/*
   private apiUrl = environment.APIURL+'softskills/traer';
   private apiUrlEditar= environment.APIURL+'softskills/editar';
   private apiUrlDelete= environment.APIURL+'softskills/borrar';
   private apiCrear = environment.APIURL+'softskills/crear';
+*/
+
+private apiUrl = 'http://localhost:8080/'+'softskills/traer';
+private apiUrlEditar= 'http://localhost:8080/'+'softskills/editar';
+private apiUrlDelete= 'http://localhost:8080/'+'softskills/borrar';
+private apiCrear = 'http://localhost:8080/'+'softskills/crear';
 
   constructor(
     /*inicializamos el metodo*/

@@ -35,11 +35,18 @@ export class EducacionService {
  // private apiUrl1 = 'http://localhost:8080/educacion/crear';
  // private apiUrlDel = 'http://localhost:8080/educacion/borrar';
   //private apiUrlUpdateR = 'http://localhost:8080/educacion/editar';
-
+/*
   private apiUrl = environment.APIURL+'educacion/traer';
   private apiUrlEditar= environment.APIURL+'educacion/editar';
   private apiUrlDelete= environment.APIURL+'educacion/borrar';
   private apiCrear = environment.APIURL+'educacion/crear';
+*/
+
+private apiUrl = 'http://localhost:8080/'+'educacion/traer';
+private apiUrlEditar= 'http://localhost:8080/'+'educacion/editar';
+private apiUrlDelete= 'http://localhost:8080/'+'educacion/borrar';
+private apiCrear = 'http://localhost:8080/'+'educacion/crear';
+
 
   constructor(
     /*inicializamos el metodo*/

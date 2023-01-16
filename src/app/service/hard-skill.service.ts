@@ -26,11 +26,17 @@ export class HardSkillService {
 
   //private apiUrl = 'http://localhost:5004/hard-Skills';
   //private apiUrl = 'http://localhost:8080/hardskills/traer';
+  /*
   private apiUrl = environment.APIURL+'hardskills/traer';
   private apiUrlEditar= environment.APIURL+'hardskills/editar';
   private apiUrlDelete= environment.APIURL+'hardskills/borrar';
   private apiCrear = environment.APIURL+'hardskills/crear';
+*/
 
+private apiUrl = 'http://localhost:8080/'+'hardskills/traer';
+private apiUrlEditar= 'http://localhost:8080/'+'hardskills/editar';
+private apiUrlDelete= 'http://localhost:8080/'+'hardskills/borrar';
+private apiCrear = 'http://localhost:8080/'+'hardskills/crear';
   constructor(
     /*inicializamos el metodo*/
     private http: HttpClient

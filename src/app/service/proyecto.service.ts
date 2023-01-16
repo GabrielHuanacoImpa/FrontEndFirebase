@@ -26,11 +26,19 @@ const httpOptions = {
 export class ProyectoService {
 
   //private apiUrl = 'http://localhost:5007/proyectos';
+  /*
+  
   private apiUrl = environment.APIURL+'proyecto/traer';
   
   private apiUrlEditar= environment.APIURL+'proyecto/editar';
   private apiUrlDelete= environment.APIURL+'proyecto/borrar';
   private apiCrear = environment.APIURL+'proyecto/crear';
+*/
+private apiUrl = 'http://localhost:8080/'+'proyecto/traer';
+  
+private apiUrlEditar= 'http://localhost:8080/'+'proyecto/editar';
+private apiUrlDelete= 'http://localhost:8080/'+'proyecto/borrar';
+private apiCrear = 'http://localhost:8080/'+'proyecto/crear';
 
   constructor(
     /*inicializamos el metodo*/
