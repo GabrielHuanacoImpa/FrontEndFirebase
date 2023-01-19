@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  APIURL: 'http://localhost:8080/'
+  apiUrl: 'https://seviciobackendghi.onrender.com/'
+  //APIURL: 'http://localhost:8080/'
 };
 
 /*

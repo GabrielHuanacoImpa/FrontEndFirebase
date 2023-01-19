@@ -41,12 +41,24 @@ export class EducacionService {
   private apiUrlDelete= environment.APIURL+'educacion/borrar';
   private apiCrear = environment.APIURL+'educacion/crear';
 */
-
+/*
 private apiUrl = 'http://localhost:8080/'+'educacion/traer';
 private apiUrlEditar= 'http://localhost:8080/'+'educacion/editar';
 private apiUrlDelete= 'http://localhost:8080/'+'educacion/borrar';
 private apiCrear = 'http://localhost:8080/'+'educacion/crear';
+*/
+//private host = 'https://seviciobackendghi.onrender.com';
+/*
+private apiUrl = 'https://seviciobackendghi.onrender.com/'+'educacion/traer';
+private apiUrlEditar= 'https://seviciobackendghi.onrender.com/'+'educacion/editar';
+private apiUrlDelete= 'https://seviciobackendghi.onrender.com/'+'educacion/borrar';
+private apiCrear = 'https://seviciobackendghi.onrender.com/'+'educacion/crear';
+*/
 
+private apiUrlTraer = environment.apiUrl+'educacion/traer';
+private apiUrlEditar=  environment.apiUrl+'educacion/editar';
+private apiUrlDelete= environment.apiUrl+'educacion/borrar';
+private apiCrear = environment.apiUrl+'educacion/crear';
 
   constructor(
     /*inicializamos el metodo*/
@@ -55,7 +67,7 @@ private apiCrear = 'http://localhost:8080/'+'educacion/crear';
 
   /* devuelve la lista de tarea */
   getEducaciones(): Observable<Educacion[]> {
-    return this.http.get<Educacion[]>(this.apiUrl)
+    return this.http.get<Educacion[]>(this.apiUrlTraer)
     
   }
   deleteEducacion(educacion: Educacion): Observable<Educacion> {

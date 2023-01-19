@@ -35,11 +35,18 @@ export class ExperienciaService {
   private apiUrlEditar= environment.APIURL+'experiencia/editar';
   private apiUrlDelete= environment.APIURL+'experiencia/borrar'
 */
-
+/*
 private apiUrl = 'http://localhost:8080/'+'experiencia/traer';
 private apiUrlCrear= 'http://localhost:8080/'+'experiencia/crear';
 private apiUrlEditar= 'http://localhost:8080/'+'experiencia/editar';
 private apiUrlDelete= 'http://localhost:8080/'+'experiencia/borrar'
+*/
+
+private apiUrlTraer = environment.apiUrl+'experiencia/traer';
+private apiUrlCrear= environment.apiUrl+'experiencia/crear';
+private apiUrlEditar= environment.apiUrl+'experiencia/editar';
+private apiUrlDelete= environment.apiUrl+'experiencia/borrar'
+
 
 
   constructor(
@@ -49,7 +56,7 @@ private apiUrlDelete= 'http://localhost:8080/'+'experiencia/borrar'
 
   /* devuelve la lista de tarea */
   getExperiencias(): Observable<Experiencia[]> {
-    return this.http.get<Experiencia[]>(this.apiUrl)
+    return this.http.get<Experiencia[]>(this.apiUrlTraer)
   }
   deleteExperiencia(experiencia: Experiencia): Observable<Experiencia> {
     /*const url = '${this.apiUrl}/${task.id}';*/

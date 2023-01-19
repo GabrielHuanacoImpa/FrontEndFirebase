@@ -32,11 +32,19 @@ export class HardSkillService {
   private apiUrlDelete= environment.APIURL+'hardskills/borrar';
   private apiCrear = environment.APIURL+'hardskills/crear';
 */
-
+/*
 private apiUrl = 'http://localhost:8080/'+'hardskills/traer';
 private apiUrlEditar= 'http://localhost:8080/'+'hardskills/editar';
 private apiUrlDelete= 'http://localhost:8080/'+'hardskills/borrar';
 private apiCrear = 'http://localhost:8080/'+'hardskills/crear';
+*/
+
+
+private apiUrlTraer = environment.apiUrl+'hardskills/traer';
+private apiUrlEditar= environment.apiUrl+'hardskills/editar';
+private apiUrlDelete= environment.apiUrl+'hardskills/borrar';
+private apiCrear = environment.apiUrl+'hardskills/crear';
+
   constructor(
     /*inicializamos el metodo*/
     private http: HttpClient
@@ -44,7 +52,7 @@ private apiCrear = 'http://localhost:8080/'+'hardskills/crear';
 
   /* devuelve la lista de tarea */
   getHardSkills(): Observable<HardSkill[]> {
-    return this.http.get<HardSkill[]>(this.apiUrl)
+    return this.http.get<HardSkill[]>(this.apiUrlTraer)
   }
   deleteHardSkill(hardSkill: HardSkill): Observable<HardSkill> {
     /*const url = '${this.apiUrl}/${hardSkill.id}';*/

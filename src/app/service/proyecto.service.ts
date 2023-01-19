@@ -34,11 +34,21 @@ export class ProyectoService {
   private apiUrlDelete= environment.APIURL+'proyecto/borrar';
   private apiCrear = environment.APIURL+'proyecto/crear';
 */
+/*
 private apiUrl = 'http://localhost:8080/'+'proyecto/traer';
   
 private apiUrlEditar= 'http://localhost:8080/'+'proyecto/editar';
 private apiUrlDelete= 'http://localhost:8080/'+'proyecto/borrar';
 private apiCrear = 'http://localhost:8080/'+'proyecto/crear';
+*/
+
+
+
+private apiUrlTraer = environment.apiUrl+'proyecto/traer';
+  
+private apiUrlEditar= environment.apiUrl+'proyecto/editar';
+private apiUrlDelete= environment.apiUrl+'proyecto/borrar';
+private apiCrear = environment.apiUrl+'proyecto/crear';
 
   constructor(
     /*inicializamos el metodo*/
@@ -47,7 +57,7 @@ private apiCrear = 'http://localhost:8080/'+'proyecto/crear';
 
   /* devuelve la lista de tarea */
   getProyectos(): Observable<Proyecto[]> {
-    return this.http.get<Proyecto[]>(this.apiUrl)
+    return this.http.get<Proyecto[]>(this.apiUrlTraer)
   }
   deleteProyecto(proyecto: Proyecto): Observable<Proyecto> {
     /*const url = '${this.apiUrl}/${proyecto.id}';*/

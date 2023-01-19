@@ -33,11 +33,19 @@ export class SoftSkillService {
   private apiUrlDelete= environment.APIURL+'softskills/borrar';
   private apiCrear = environment.APIURL+'softskills/crear';
 */
-
+/*
 private apiUrl = 'http://localhost:8080/'+'softskills/traer';
 private apiUrlEditar= 'http://localhost:8080/'+'softskills/editar';
 private apiUrlDelete= 'http://localhost:8080/'+'softskills/borrar';
 private apiCrear = 'http://localhost:8080/'+'softskills/crear';
+*/
+
+
+
+private apiUrlTraer = environment.apiUrl+'softskills/traer';
+private apiUrlEditar= environment.apiUrl+'softskills/editar';
+private apiUrlDelete= environment.apiUrl+'softskills/borrar';
+private apiCrear = environment.apiUrl+'softskills/crear';
 
   constructor(
     /*inicializamos el metodo*/
@@ -46,7 +54,7 @@ private apiCrear = 'http://localhost:8080/'+'softskills/crear';
 
   /* devuelve la lista de tarea */
   getSoftSkills(): Observable<SoftSkill[]> {
-    return this.http.get<SoftSkill[]>(this.apiUrl)
+    return this.http.get<SoftSkill[]>(this.apiUrlTraer)
   }
   deleteSoftSkill(softSkill: SoftSkill): Observable<SoftSkill> {
     /*const url = '${this.apiUrl}/${softSkill.id}';*/

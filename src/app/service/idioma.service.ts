@@ -28,11 +28,17 @@ export class IdiomaService {
 
   //private apiUrl = 'http://localhost:5006/idiomas';
   //private apiUrl = 'http://localhost:8080/idioma/traer';
-
+/*
   private apiUrl = 'http://localhost:8080/'+'idioma/traer';
   private apiUrlEditar= 'http://localhost:8080/'+'idioma/editar';
   private apiUrlDelete= 'http://localhost:8080/'+'idioma/borrar';
   private apiCrear = 'http://localhost:8080/'+'idioma/crear';
+*/
+
+private apiUrlTraer = environment.apiUrl+'idioma/traer';
+private apiUrlEditar= environment.apiUrl+'idioma/editar';
+private apiUrlDelete= environment.apiUrl+'idioma/borrar';
+private apiCrear = environment.apiUrl+'idioma/crear';
 
   constructor(
     /*inicializamos el metodo*/
@@ -41,7 +47,7 @@ export class IdiomaService {
 
   /* devuelve la lista de tarea */
   getIdiomas(): Observable<Idioma[]> {
-    return this.http.get<Idioma[]>(this.apiUrl)
+    return this.http.get<Idioma[]>(this.apiUrlTraer)
   }
   deleteIdioma(idioma: Idioma): Observable<Idioma> {
     /*const url = '${this.apiUrl}/${idioma.id}';*/
